@@ -34,5 +34,42 @@ G, pos, edge_labels = {(u, v): d[“weight”] for u, v, d in G.edges(data = Tru
 	nx.draw_networkx_edges(Tree, pos, edge_color = “red”, width = 2)
 	plt.axis(“off”)
 	plt.show()
+function quicksort(array, low, high)
+		if (low < high)
+			pivotIndex = partition(array, low, high)
+			quicksort(array, low, pivotIndex – 1)
+			quicksort(array, pivotIndex + 1, high)
+
+	function partition(array, low, high)
+		pivot = array[high – 1] # this selects pivot as second-to-last element of array
+		i = low – 1
+		for j from low to high – 2
+			if array[j] <= pivot
+				i++
+				swap(array[i], array[j])
+		swap(array[i + 1], array[high – 1]) # re-arranging pivot to correct spot
+		
+return i + 1
+	def partition(array, low, high):
+		pivot = array[high – 1] # this selects pivot as second-to-last element of array
+		i = low – 1
+		for j in range(low, high – 1):
+			if array[j] <= pivot:
+			i = i + 1
+			array[i], array[j] = array[j], array[i] #swapping array elements
+		array[i + 1], array[high – 1] = array[high – 1], array[i + 1] # input pivot in spot
+
+		return (i + 1)
+
+def quicksort(array, low, high):
+		if low < high:
+			pivot_index = partition(array, low, high)
+			quicksort(array, low, pivot_index – 1)
+			quicksort(array, pivot_index + 1, high) 
+
+	arr = [“cat”, “dog”, “tiger”, “lion”, “monkey”]
+	quicksort(arr, 0, len(arr))
+	
+	print(“The array has been sorted: “, arr)
 
 
